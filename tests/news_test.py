@@ -32,7 +32,7 @@ class SourceTest(unittest.TestCase):
        '''
        Setup function that will run before every test
        '''
-       self.new_source = Sources('KNYS','BBC','Latest news today','https://newscenteer.com','Sports','Isiolo')
+       self.new_source = Sources('KNYS','BBC','Latest news today','https://newscenteer.com','Sports','kenya')
    def test_instance(self):
        self.assertTrue(isinstance(self.new_source,Sources))
    def test_to_check_instance_variables(self):
@@ -44,7 +44,7 @@ class SourceTest(unittest.TestCase):
        self.assertEquals(self.new_source.description,'Latest news today')
        self.assertEquals(self.new_source.url,'https://newscenteer.com')
        self.assertEquals(self.new_source.category,'Sports')
-       self.assertEquals(self.new_source.country,'Isiolo')
+       self.assertEquals(self.new_source.country,'kenya')
 
 
 if __name__ == '__main__':
