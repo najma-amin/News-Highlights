@@ -1,49 +1,37 @@
 
 {% extends 'base.html'%}
-{% import 'macros.html' as macro%}
-
-{% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/mine.css')}}">
-{% endblock %}
+{% import 'macros.html' as macro %}
 
 {% block content%}
-<div class="container-fluid">
-    <hr>
-        <div class="row">
-        <div class="col-md-4">
-            <h2>General Sources</h2>
-        </div>
-        {{macro.displayNewsSourcesList(general)}}
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-md-4">
-            <h2 >Business News Sources</h2>
-        </div>
-        {{macro.displayNewsSourcesList(business)}}
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Sports News Sources</h2>
-        </div>
-        {{macro.displayNewsSourcesList(sports)}}
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Technology News Sources</h2>
-        </div>
-        {{macro.displayNewsSourcesList(technology)}}
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Entertainment News Sources</h2>
-        </div>
-        {{macro.displayNewsSourcesList(entertainment)}}
-    </div>
-    <hr>
+<div class="container">
+		<!-- Business News Section  -->
+        <h3> Top Business News Sources</h3>
+        <hr>
+
+        {{ macro.displaySourceList(sources)}}
+
+        <!-- Business News Section  -->
+         
+        <h3> Top Technology News Sources</h3>
+        <hr> 
+
+        {{ macro.displaySourceList(technology_sources)}}
+
+        <!-- Entertainment News Section  -->
+         
+        <h3> Top Entertainment News Sources</h3>
+        <hr>
+
+        {{ macro.displaySourceList(entertainment_sources)}}
+
+        <!-- Entertainment News Section  -->
+         
+        <h3> Top Sports News Sources</h3>
+        <hr>
+
+        {{ macro.displaySourceList(sports_sources)}}
+	
 </div>
-{% endblock %}
+
+
+{%endblock%}
