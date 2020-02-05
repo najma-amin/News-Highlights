@@ -1,6 +1,6 @@
 import unittest
 from flask import current_app
-from app import create_app 
+from app import create_app
 
 class BasicsTestCase(unittest.TestCase):
     def setUp(self):
@@ -8,10 +8,9 @@ class BasicsTestCase(unittest.TestCase):
         self.app_context = self.app.app_context()
         self.app_context.push()
 
-    def tearDown(self)
+    def tearDown(self):
 
-         self.app_context.pop()
+        self.app_context.pop()
 
     def test_app_exists(self):
         self.assertFalse(current_app is None)
-    
